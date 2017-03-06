@@ -5,52 +5,49 @@
 #include "Node_LR_Door.h"
 #include "myDebug.h"
 
-MySensor gw;
 MyMessage lightMsg(CHILD_ID_LIGHT, V_LIGHT);
 MyMessage lightStatusMsg(CHILD_ID_LIGHT_STATUS, V_STATUS);
 
 void MySensorsSetup()
 {
-  gw.begin(MSIncomingMessage, NODE_ID, false);
-
   // Send the Sketch Version Information to the Gateway
-  gw.sendSketchInfo(SN, SV);
+  sendSketchInfo(SN, SV);
   
     //Retreive our last light state from the eprom
-  int LightState=gw.loadState(EPROM_LIGHT_STATE); 
+  int LightState=loadState(EPROM_LIGHT_STATE); 
   if (LightState<=1) {
     LastLightCommand=LightState;
   }
 
-  gw.present(CHILD_ID_LIGHT, V_STATUS );
+  present(CHILD_ID_LIGHT, V_STATUS );
 //  SetCurrentState2Hardware(); // needed for direct version. Now we just sense it
   SendCurrentState2Controller(); 
 }
 
 void MSProcess() {
-  gw.process();
+  // happens internally
 }
 
 // Depreciated, convert to MSWait.
 void MSDelay(int t) {
-  gw.wait(t);
+  wait(t);
 }
 // same as above but better name
 void MSWait(int t) {
-  gw.wait(t);
+  wait(t);
 }
 
 void MSSleep(int t) {
-  gw.sleep(t);
+  sleep(t);
 }
 
 // send the current light sensor value to controller
 void SendCurrentState2Controller()
 {
-  gw.send(lightStatusMsg.set(LightSensor));
+  send(lightStatusMsg.set(LightSensor));
 }
 
-void MSIncomingMessage(const MyMessage &message)
+void receive(const MyMessage &message)
 {
   if (message.type == V_LIGHT) {
     Serial.println( "V_LIGHT command received..." );
@@ -61,7 +58,7 @@ void MSIncomingMessage(const MyMessage &message)
       return;
     }
     LastLightCommand=lstate;
-    gw.saveState(EPROM_LIGHT_STATE, LastLightCommand);
+    saveState(EPROM_LIGHT_STATE, LastLightCommand);
     //Here you set the actual light state/level
     SetCurrentState2Hardware();
   }
