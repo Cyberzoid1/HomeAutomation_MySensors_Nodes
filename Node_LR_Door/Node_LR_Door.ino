@@ -1,6 +1,3 @@
-#include <MyConfig.h>
-#include <MySensors.h>
-
 /**
  * Documentation: http://www.mysensors.org
  * Support Forum: http://forum.mysensors.org
@@ -13,11 +10,12 @@
  */
  
 #include <SPI.h>
-#include <MySensor.h>
-#include <sw_task.h>
+#include "MySensorsNode.h"    // Must be called before MyConfig.h
+#include <MyConfig.h> // mysensors related
+#include <MySensors.h>
+//#include <sw_task.h>
 //#include <avr/sleep.h>
 #include <avr/interrupt.h>
-#include "MySensorsNode.h"
 #include "Node_LR_Door.h"
 #include "myDebug.h"
 

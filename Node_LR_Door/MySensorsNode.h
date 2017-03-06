@@ -1,7 +1,19 @@
 
-#include <SPI.h>
-#include <MySensor.h>  
 
+
+#include <SPI.h>
+
+/*********************
+ * MyConfig.h local settings
+**********************/
+#define MY_RADIO_NRF24
+
+#include <MyConfig.h>
+#include <MySensors.h>
+
+/***************************
+ * Node Settings 
+****************************/
 #define SN "LR Light Switch"
 #define SV "1.0"
 #define NODE_ID 5  // Refer to NySensors_Node_list.txt

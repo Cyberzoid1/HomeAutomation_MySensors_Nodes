@@ -1,6 +1,6 @@
 #include <Arduino.h>
 #include "MySensorsNode.h"
-#include "Node_Nick_Door_V1.h"
+#include "Node_LR_Door.h"
 #include "myDebug.h"
 
 void buttoncheck(){
