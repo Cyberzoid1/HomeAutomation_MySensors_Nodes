@@ -1,5 +1,6 @@
 
-
+#ifndef MYSENSORSNODE_H
+#define MYSENSORSNODE_H
 
 #include <SPI.h>
 
@@ -34,3 +35,5 @@ void MSSleep(int t);
 void SendCurrentState2Controller();
 void SetCurrentState2Hardware();
 void MSIncomingMessage(const MyMessage &message);
+
+#endif
