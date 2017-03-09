@@ -38,8 +38,6 @@ void loop()
   // check button
   // check lightStatusSensor
   if (tLightSensor.tupdate()){
-    UpdateLightSensor();
-    Serial_Event(); // check for user input
   }
 }
 
