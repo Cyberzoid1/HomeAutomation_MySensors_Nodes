@@ -1,5 +1,5 @@
-//#include <SPI.h>
-//#include "MySensorsNode.h"    // Must be called before MyConfig.h
+#include <SPI.h>
+#include "MySensorsNode.h"    // Must be called before MyConfig.h
 //#include <MyConfig.h> // mysensors related
 //#include <MySensors.h>
 //#include "Node_LR_Door.h"

@@ -1,14 +1,14 @@
 
 
 
-#include <SPI.h>
+//#include <SPI.h>
 
 /*********************
  * MyConfig.h local settings
 **********************/
 #define MY_RADIO_NRF24
 
-#include <MyConfig.h>
+//#include <MyConfig.h>
 #include <MySensors.h>
 
 /***************************

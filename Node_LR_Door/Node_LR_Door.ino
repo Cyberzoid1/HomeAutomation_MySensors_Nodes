@@ -11,11 +11,11 @@
  
 #include <SPI.h>
 #include "MySensorsNode.h"    // Must be called before MyConfig.h
-#include <MyConfig.h> // mysensors related
-#include <MySensors.h>
+//#include <MyConfig.h> // mysensors related
+//#include <MySensors.h>
 #include <sw_task.h>
 //#include <avr/sleep.h>
-#include <avr/interrupt.h>
+//#include <avr/interrupt.h>
 #include "Node_LR_Door.h"
 #include "myDebug.h"
 
@@ -28,7 +28,7 @@ sw_task tLightSensor(500);
 void setup()  
 {
   MySensorsSetup();
-  lightServoInitialization();
+  //lightServoInitialization();
   Serial.println( "Node ready to receive messages..." );  
 }
 
