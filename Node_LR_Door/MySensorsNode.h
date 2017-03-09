@@ -1,4 +1,9 @@
-//#include <SPI.h>
+
+#ifndef MYSENSORSNODE_H
+#define MYSENSORSNODE_H
+
+#include <SPI.h>
+>>>>>>> master
 
 /*********************
  * MyConfig.h local settings
@@ -31,3 +36,5 @@ void MSSleep(int t);
 void SendCurrentState2Controller();
 void SetCurrentState2Hardware();
 void MSIncomingMessage(const MyMessage &message);
+
+#endif
