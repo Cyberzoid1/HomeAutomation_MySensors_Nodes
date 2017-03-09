@@ -10,31 +10,27 @@
  */
  
 #include <SPI.h>
-#include "MySensorsNode.h"    // Must be called before MyConfig.h
+//#include "MySensorsNode.h"    // Must be called before MyConfig.h
 //#include <MyConfig.h> // mysensors related
 //#include <MySensors.h>
 #include <sw_task.h>
 //#include <avr/sleep.h>
 //#include <avr/interrupt.h>
 #include "Node_LR_Door.h"
-#include "myDebug.h"
 
-int LastLightCommand=LIGHT_OFF; // last command basicaly
-int LightSensor=LIGHT_OFF;
-int LastLightSensor=LIGHT_OFF;
 
 sw_task tLightSensor(500);
 
 void setup()  
 {
-  MySensorsSetup();
+  //MySensorsSetup();
   //lightServoInitialization();
   Serial.println( "Node ready to receive messages..." );  
 }
 
 void loop()      
 {
-  MSProcess();
+ //MSProcess();
   // check button
   // check lightStatusSensor
   if (tLightSensor.tupdate()){
@@ -43,14 +39,8 @@ void loop()
 
 void SetCurrentState2Hardware()
 {
-  if (LastLightCommand==LIGHT_OFF) {
-     Serial.println( "Light state: OFF" );
-     lightServo(0);
-  }
-  else {
      Serial.println( "Light state: ON" );
      lightServo(1);
-  }
 }
 
 void Serial_Event() {
