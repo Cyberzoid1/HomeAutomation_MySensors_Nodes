@@ -34,6 +34,6 @@ void MSDelay(int t);
 void MSSleep(int t);
 void SendCurrentState2Controller();
 void SetCurrentState2Hardware();
-void MSIncomingMessage(const MyMessage &message);
+//void MSIncomingMessage(const MyMessage &message); // This is not used? api change to receive in MySensorsNode.cpp perhaps
 
 #endif
