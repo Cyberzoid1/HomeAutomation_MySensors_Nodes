@@ -27,14 +27,17 @@ sw_task tLightSensor(500);
 
 void setup()  
 {
-  MySensorsSetup();
+  Serial.begin(115200);
+  Serial.println("Starting");
+  Serial.end();
+  //MySensorsSetup();
   lightServoInitialization();
   Serial.println( "Node ready to receive messages..." );  
 }
 
 void loop()      
 {
-  MSProcess();
+ // MSProcess();
   // check button
   // check lightStatusSensor
   if (tLightSensor.tupdate()){
