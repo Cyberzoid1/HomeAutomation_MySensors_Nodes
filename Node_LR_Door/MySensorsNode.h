@@ -9,8 +9,8 @@
 **********************/
 #define MY_RADIO_NRF24
 
-#include <MyConfig.h>
-#include <MySensors.h>
+//#include <MyConfig.h>
+//#include <MySensors.h>
 
 /***************************
  * Node Settings 
